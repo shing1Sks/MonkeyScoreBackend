@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify
 import pickle
+from flask_cors import CORS
 import pandas as pd
 
 app = Flask(__name__)
+
+CORS(app)
 
 with open("model.pkl", "rb") as f:
     model = pickle.load(f)
@@ -11,8 +14,9 @@ with open("label_encoders.pkl", "rb") as f:
     le = pickle.load(f)
 
 
-@app.route("/predict", methods=["GET"])
+@app.route("/predict", methods=["POST"])
 def analysis():
+    print(request)
     required_params = [
         "sex",
         "age",
