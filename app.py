@@ -65,6 +65,9 @@ def analysis():
     input_df = pd.DataFrame([data], columns=required_params)
 
     prediction = model.predict(input_df)
+
+    prediction = float(prediction[0])
+
     return jsonify({"prediction": prediction[0]})
 
 
