@@ -68,7 +68,7 @@ def analysis():
 
     prediction = float(prediction[0])
 
-    return jsonify({"prediction": prediction[0]})
+    return jsonify({"prediction": prediction})
 
 
 if __name__ == "__main__":
