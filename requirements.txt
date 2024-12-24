@@ -3,3 +3,4 @@ Pandas
 flask-cors
 gunicorn
 scikit-learn
+xgboost
